@@ -1,0 +1,9 @@
+development.json
+staging.json
+production.json
+node_modules
+*.csv
+*.json
+
+!package.json
+!tsconfig.json
