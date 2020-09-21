@@ -1,6 +1,7 @@
 * People migration scripts for Trove
 ** Scripts
 *** lib/getFields.js
+#+BEGIN_SRC sh
 usage: getFields.js [-h] [-e ENV]
 
 Get some details about the firestore
@@ -8,7 +9,9 @@ Get some details about the firestore
 optional arguments:
   -h, --help         show this help message and exit
   -e ENV, --env ENV  Environment to use
+#+END_SRC
 *** lib/exportCollection.js
+#+BEGIN_SRC sh
 usage: exportCollection.js [-h] [-e ENV] [-c COLLECTION]
                            [-o OUTPUT]
 
@@ -21,8 +24,9 @@ optional arguments:
                         Collection(s) to export. Comma separated
   -o OUTPUT, --output OUTPUT
                         Output filename
-
+#+END_SRC
 *** lib/importCollection.js
+#+BEGIN_SRC
 usage: exportCollection.js [-h] [-e ENV] [-c COLLECTION]
                            [-o OUTPUT]
 
@@ -35,3 +39,4 @@ optional arguments:
                         Collection(s) to export. Comma separated
   -o OUTPUT, --output OUTPUT
                         Output filename
+#+END_SRC
