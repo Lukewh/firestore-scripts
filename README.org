@@ -1,0 +1,37 @@
+* People migration scripts for Trove
+** Scripts
+*** lib/getFields.js
+usage: getFields.js [-h] [-e ENV]
+
+Get some details about the firestore
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -e ENV, --env ENV  Environment to use
+*** lib/exportCollection.js
+usage: exportCollection.js [-h] [-e ENV] [-c COLLECTION]
+                           [-o OUTPUT]
+
+Export a collection to a json file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e ENV, --env ENV     Environment to use
+  -c COLLECTION, --collection COLLECTION
+                        Collection(s) to export. Comma separated
+  -o OUTPUT, --output OUTPUT
+                        Output filename
+
+*** lib/importCollection.js
+usage: exportCollection.js [-h] [-e ENV] [-c COLLECTION]
+                           [-o OUTPUT]
+
+Export a collection to a json file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e ENV, --env ENV     Environment to use
+  -c COLLECTION, --collection COLLECTION
+                        Collection(s) to export. Comma separated
+  -o OUTPUT, --output OUTPUT
+                        Output filename

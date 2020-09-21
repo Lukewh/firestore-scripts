@@ -1,0 +1,5 @@
+{
+  "instructions": "Copy and paste service accounts for each Firebase project:",
+  "directions": "https://firebase.google.com/docs/functions/local-emulator#set_up_admin_credentials_optional",
+  "files": ["development.json", "staging.json", "production.json"]
+}
