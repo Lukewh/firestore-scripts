@@ -1,6 +1,5 @@
-* People migration scripts for Trove
-** Scripts
-*** lib/getFields.js
+* Helper scripts for firebase
+** lib/getFields.js
 #+BEGIN_SRC sh
 usage: getFields.js [-h] [-e ENV]
 
@@ -10,7 +9,7 @@ optional arguments:
   -h, --help         show this help message and exit
   -e ENV, --env ENV  Environment to use
 #+END_SRC
-*** lib/mergeCollections.js
+** lib/mergeCollections.js
 #+BEGIN_SRC sh
   usage: mergeCollections.js [-h] [-e ENV] [-c COLLECTIONS] [-o OUTPUT]
 
@@ -25,7 +24,7 @@ optional arguments:
                           Output filename
 
 #+END_SRC
-*** lib/importCollection.js
+** lib/importCollection.js
 #+BEGIN_SRC
 usage: exportCollection.js [-h] [-e ENV] [-c COLLECTION]
                            [-o OUTPUT]
