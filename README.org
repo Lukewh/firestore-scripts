@@ -10,20 +10,20 @@ optional arguments:
   -h, --help         show this help message and exit
   -e ENV, --env ENV  Environment to use
 #+END_SRC
-*** lib/exportCollection.js
+*** lib/mergeCollections.js
 #+BEGIN_SRC sh
-usage: exportCollection.js [-h] [-e ENV] [-c COLLECTION]
-                           [-o OUTPUT]
+  usage: mergeCollections.js [-h] [-e ENV] [-c COLLECTIONS] [-o OUTPUT]
 
-Export a collection to a json file
+  Merge collections to a json file
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -e ENV, --env ENV     Environment to use
-  -c COLLECTION, --collection COLLECTION
-                        Collection(s) to export. Comma separated
-  -o OUTPUT, --output OUTPUT
-                        Output filename
+  optional arguments:
+    -h, --help            show this help message and exit
+    -e ENV, --env ENV     Environment to use
+    -c COLLECTIONS, --collections COLLECTIONS
+                          Collections to merge. Comma separated
+    -o OUTPUT, --output OUTPUT
+                          Output filename
+
 #+END_SRC
 *** lib/importCollection.js
 #+BEGIN_SRC
