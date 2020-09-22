@@ -1,4 +1,4 @@
-* Helper scripts for firebase
+* Helper scripts for firestore
 ** lib/getFields.js
 #+BEGIN_SRC sh
 usage: getFields.js [-h] [-e ENV]
@@ -25,17 +25,16 @@ optional arguments:
 
 #+END_SRC
 ** lib/importCollection.js
-#+BEGIN_SRC
-usage: exportCollection.js [-h] [-e ENV] [-c COLLECTION]
-                           [-o OUTPUT]
+#+BEGIN_SRC sh
+  usage: importCollection.js [-h] [-e ENV] [-c COLLECTION] [-i INPUT]
 
-Export a collection to a json file
+  Import a collection from a json file
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -e ENV, --env ENV     Environment to use
-  -c COLLECTION, --collection COLLECTION
-                        Collection(s) to export. Comma separated
-  -o OUTPUT, --output OUTPUT
-                        Output filename
+  optional arguments:
+    -h, --help            show this help message and exit
+    -e ENV, --env ENV     Environment to use
+    -c COLLECTION, --collection COLLECTION
+                          Collection to import to
+    -i INPUT, --input INPUT
+                          Input JSON file
 #+END_SRC
