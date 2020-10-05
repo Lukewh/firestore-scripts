@@ -37,13 +37,15 @@ switch (args.env) {
     envFile = 'development';
 }
 
-import(`./firebaseAdminServiceAccounts/${envFile}.json`)
-  .then(async serviceAccount => {
+import(`../firebaseAdminServiceAccounts/${envFile}.json`)
+  .then(async (serviceAccount) => {
     const serviceDeets = {
       clientEmail: serviceAccount.client_email,
       privateKey: serviceAccount.private_key,
       projectId: serviceAccount.project_id,
     };
+
+    console.log(serviceDeets.projectId);
 
     admin.initializeApp({
       credential: admin.credential.cert(serviceDeets),
@@ -94,7 +96,7 @@ import(`./firebaseAdminServiceAccounts/${envFile}.json`)
 
     await Promise.all(addSubCollections);
   })
-  .catch(e => {
+  .catch((e) => {
     console.error(e);
     process.exit(1);
   });

@@ -37,13 +37,17 @@ switch (args.env) {
     envFile = 'development';
 }
 
-import(`./firebaseAdminServiceAccounts/${envFile}.json`)
-  .then(async serviceAccount => {
+console.log(`Using ${envFile}.json`);
+
+import(`../firebaseAdminServiceAccounts/${envFile}.json`)
+  .then(async (serviceAccount) => {
     const serviceDeets = {
       clientEmail: serviceAccount.client_email,
       privateKey: serviceAccount.private_key,
       projectId: serviceAccount.project_id,
     };
+
+    console.log(serviceDeets.projectId);
 
     admin.initializeApp({
       credential: admin.credential.cert(serviceDeets),
@@ -58,10 +62,7 @@ import(`./firebaseAdminServiceAccounts/${envFile}.json`)
     };
 
     const fetchCollection = async (collectionName: string) => {
-      return await admin
-        .firestore()
-        .collection(collectionName)
-        .get();
+      return await admin.firestore().collection(collectionName).get();
     };
 
     const getSubCollections = async (collectionName: string, docId: string) => {
@@ -148,6 +149,11 @@ import(`./firebaseAdminServiceAccounts/${envFile}.json`)
     const output: any = Object.keys(result).reduce((acc: any, key: string) => {
       Object.keys(result[key]).forEach((docKey: string) => {
         if (acc[docKey]) {
+          if (acc[docKey].email !== result[key][docKey].email) {
+            console.log(acc[docKey], result[key][docKey]);
+            throw new Error("Cannot merge users, ID's match, but emails don't");
+            process.exit(1);
+          }
           acc[docKey] = { ...acc[docKey], ...result[key][docKey] };
         } else {
           acc[docKey] = result[key][docKey];
@@ -166,7 +172,7 @@ import(`./firebaseAdminServiceAccounts/${envFile}.json`)
 
     process.exit(0);
   })
-  .catch(e => {
+  .catch((e) => {
     console.error(e);
     process.exit(1);
   });
