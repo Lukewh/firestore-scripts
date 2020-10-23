@@ -4,7 +4,8 @@ import * as admin from 'firebase-admin';
 import { ArgumentParser } from 'argparse';
 
 const parser = new ArgumentParser({
-  description: 'Import a collection from a json file',
+  description:
+    'Migrate permissions from temporary format to new format 2020-10-23',
   add_help: true,
 });
 
