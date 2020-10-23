@@ -38,3 +38,13 @@ optional arguments:
     -i INPUT, --input INPUT
                           Input JSON file
 #+END_SRC
+** lib/permissionsMigration.js
+#+BEGIN_SRC sh
+  usage: permissionsMigration.js [-h] [-e ENV]
+  
+  Migrate permissions from temporary format to new format 2020-10-23
+  
+  optional arguments:
+    -h, --help         show this help message and exit
+    -e ENV, --env ENV  Environment to use
+#+END_SRC
