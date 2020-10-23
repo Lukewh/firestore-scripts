@@ -13,5 +13,10 @@
     "lib": ["es2019"]
   },
   "compileOnSave": true,
-  "files": ["getFields.ts", "mergeCollections.ts", "importCollection.ts"]
+  "files": [
+    "getFields.ts",
+    "mergeCollections.ts",
+    "importCollection.ts",
+    "permissionsMigration.ts"
+  ]
 }
